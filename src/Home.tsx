@@ -259,7 +259,13 @@ const Home = (props: HomeProps) => {
                 severity: "error",
                 hideDuration: null,
               });
-            }
+            } else if (e.message.includes("Invalid option tokenMint")) {
+              setAlertState({
+                open: true,
+                message: `Invalid configuration: ${e.message}`,
+                severity: "error",
+                hideDuration: null,
+              });
           } else {
             setAlertState({
               open: true,
